@@ -4,17 +4,17 @@ class Int
     private int value;
     public Int (int value)
     {
-    this.value = value;
+        this.value = value;
     }
 
     public Int add (Int n)
     {
-    return new Int(this.value + n.value);
+        return new Int(this.value + n.value);
     }
 
     public boolean lessThan (Int n)
     {
-    return this.value < n.value;
+        return this.value < n.value;
     }
 
     public static Int sum(Int [] a){

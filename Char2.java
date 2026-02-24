@@ -3,24 +3,24 @@ class Char
     private char ch;
     public Char (char ch)
     {
-    this.ch = ch;
+        this.ch = ch;
     }
 
     public boolean isDigit ()
     {
-    return 48 <= ch && ch <= 57;
+        return 48 <= ch && ch <= 57;
     }
 
     public int compareTo (Char c)
     {
-    int comp = 0;
-    if (this.ch < c.ch)
-    comp = -1;
-    else if (this.ch == c.ch)
-    comp = 0;
-    else
-    comp = 1;
-    return comp;
+        int comp = 0;
+        if (this.ch < c.ch)
+            comp = -1;
+        else if (this.ch == c.ch)
+            comp = 0;
+        else
+            comp = 1;
+        return comp;
     }
 
     public static Index lastIndexOf (Char [] a, Char b){
