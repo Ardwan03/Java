@@ -1,0 +1,69 @@
+// Klassen ArrayList representerar en lista med objekt.
+class ArrayList<T>
+{
+    private Object[] objects;
+    public ArrayList (Object[] objects)
+    {
+        this.objects = new Object[objects.length];
+        for (int i = 0; i < objects.length; i++)
+            this.objects[i] = objects[i];
+    }
+    public String toString ()
+    {
+        String s = "[";
+        if (objects.length > 0)
+        {
+            for (int i = 0; i < objects.length - 1; i++)
+                s += objects[i] + ", ";
+            s += objects[objects.length - 1];
+        }
+        s += "]";
+        return s;
+    }
+    // addFirst lägger till ett givet objekt i början av listan
+    public void addFirst (T obj){
+        // koden saknas här
+        Object [] a = new Object [objects.length + 1];
+        int index = 1;
+        for(int i=0;i<objects.length;i++)
+            a[index++] = objects[i];
+        a[0] = obj;
+        objects = a;
+    }
+
+
+    // contains returnerar true om ett givet objekt finns
+    // i listan, annars false.
+    public boolean contains (Object obj){
+        // koden saknas här
+        for(int i=0; i<objects.length; i++)
+            if(objects[i].equals(obj)) // equals används för att jämföra innehållet av två objekt. Varför inte contains? Jo contains jämför om ett element finns i en samling, som tex en array. 
+                return true;            // equals kan användas för string eller objekt, utan definition. Annars behvös definition för att använda equals. 
+
+        return false;
+
+    }
+}
+/*Klassen ArrayList används så här:
+Object[] a = { new String("o"),
+new String("m"),
+new String("e")
+};
+ArrayList<String> list = new ArrayList<>(a);
+System.out.println(list);
+System.out.println("");
+list.addFirst(new String("S")); // (1)
+System.out.println(list);
+boolean cont = list.contains(new String("m"));
+System.out.println(cont);
+
+public char CharAt(int index) throws java.lang.IndexOutOfBoundsException {
+    if (index < 0 || index >= numberOfChars)
+        throw new java.lang.IndexOutOfBoundsException();
+    Node n = first;
+    while (n!= null && n!=ch)
+        n = n.next;
+    if(n.equals(ch))
+        return n.ch;
+}
+*/
